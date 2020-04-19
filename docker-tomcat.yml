@@ -3,32 +3,8 @@
   hosts: all
   become: true
   tasks:
-#    - name: Add config
-#      shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-#    - name: Install Docker
-#      yum: name=docker-ce state=latest
-#    - name: Run service
-#      systemd:
-#        name: docker
-#        state: started
-#        enabled: yes
-#    - name: Install Pip
-#      yum: name=python-pip state=latest
-#    - name: Pip docker
-#      pip: name=docker state=latest
-#    - name: run
-#      systemd:
-#        name: docker
-#        state: started
-#        enabled: yes
-#    - name: add
-#      user:
-#        name: psapp
-#        groups: docker
-#        append: yes
     - name: Docker login
-#      shell: 'docker login docker.com -u {{ ansible_user }} -p {{ ansible_ssh_pass }}'
-      shell: 'docker login docker.com -u itartash -p kOrneR182324'
+      shell: 'docker login docker.com -u itartash -p 1111'
     - name: See running containers
       shell: docker ps --filter name=tomcat -q
       register: run_list
@@ -42,12 +18,7 @@
       shell: docker stop tomcat && docker rm tomcat
       when: diff | int != 0
     - name: Run Tomcat container
-#      shell: 'docker run -d -p 8080:8080 docker.com/danpil/nxbootcamp/healthcheck_service:{{ version }}'
-#      shell: 'docker run -d -p 8080:8080 https://hub.docker.com/r/danpil/nxbootcamp/healthcheck_service:korotkaya.natalia.healthcheck_service.1.0.0-snapshot'
-
       shell: 'docker run -d -p 8080:8080 danpil/nxbootcamp:korotkaya.natalia.healthcheck_service.1.0.0-snapshot'
-#      shell: 'docker run -d -p 8080:8080 docker.com/danpil/nxbootcamp:{{version}}'
-
       when: diff | int != 0 or run | int == 0
 
 

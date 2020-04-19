@@ -94,15 +94,10 @@
           <configuration>
             <dockerfile>Dockerfile</dockerfile>
             <username>itartash</username>
-            <password>kOrneR182324</password>
+            <password>1111</password>
             <repository>danpil/nxbootcamp</repository>
             <tag>korotkaya.natalia.healthcheck_service.1.0.0-snapshot</tag>
           </configuration>
-<!--          <configuration>-->
-<!--            <dockerfile>Dockerfile</dockerfile>-->
-<!--            <repository>hub.docker.com/danpil/nxbootcamp/korotkaya/natalia/healthcheck_service</repository>-->
-<!--            <tag>${project.version}</tag>-->
-<!--          </configuration>-->
         </plugin>
       </plugins>
     </pluginManagement>
