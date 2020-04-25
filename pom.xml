@@ -43,7 +43,7 @@
     <repository>
       <id>release</id>
       <name>Internal Releases</name>
-      <url>file://qwe</url>
+      <url>file://fuu</url>
     </repository>
   </distributionManagement>
            
