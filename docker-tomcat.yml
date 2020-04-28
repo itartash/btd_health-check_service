@@ -18,7 +18,7 @@
       shell: docker stop tomcat && docker rm tomcat
       when: diff | int != 0
     - name: Run Tomcat container
-      shell: 'docker run -d -p 8080:8080 danpil/nxbootcamp:korotkaya.natalia.healthcheck_service.1.0.0-snapshot'
+      shell: 'docker run -d -p 8080:8080 danpil/nxbootcamp:1.0.24-develop.9bf2f94696ed32e6aaa96213cfa04e664cf92db3'
       when: diff | int != 0 or run | int == 0
 
 
