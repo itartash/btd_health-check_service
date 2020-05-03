@@ -4,7 +4,7 @@
   become: true
   tasks:
     - name: Docker login
-      shell: 'docker login docker.com -u itartash -p kOrneR182324'
+      shell: 'docker login docker.com -u login -p password'
     - name: See running containers
       shell: docker ps --filter name=tomcat -q
       register: run_list
